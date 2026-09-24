@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComicCraft AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🎨 ComicCraft AI</div>
+    <span>Gemini-powered comic story creator</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">AI COMIC STORY CREATOR</p>
+      <h1>Turn an idea into a comic.</h1>
+      <p>Describe your story and ComicCraft creates characters, scenes, narration and dialogue panel by panel.</p>
+    </section>
+
+    <section class="card">
+      <form id="comicForm">
+        <label for="idea">Story idea</label>
+        <textarea id="idea" required placeholder="Example: A school student discovers a robot hidden under an old temple..."></textarea>
+
+        <div class="row">
+          <div>
+            <label for="genre">Genre</label>
+            <select id="genre">
+              <option>Adventure</option>
+              <option>Fantasy</option>
+              <option>Science Fiction</option>
+              <option>Mystery</option>
+              <option>Comedy</option>
+              <option>Superhero</option>
+            </select>
+          </div>
+          <div>
+            <label for="panels">Panels</label>
+            <select id="panels">
+              <option value="4">4</option>
+              <option value="6" selected>6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="generateBtn" type="submit">✨ Generate Comic</button>
+        <p id="status" class="status"></p>
+      </form>
+    </section>
+
+    <section id="result" class="result hidden">
+      <div class="result-header">
+        <div>
+          <p class="eyebrow">YOUR COMIC</p>
+          <h2 id="title"></h2>
+          <p id="logline"></p>
+        </div>
+        <button id="printBtn" class="secondary">Print / Save PDF</button>
+      </div>
+
+      <h3>Characters</h3>
+      <div id="characters" class="characters"></div>
+
+      <h3>Panels</h3>
+      <div id="panelsOutput" class="panels"></div>
+    </section>
+  </main>
+
+  <footer>ComicCraft AI • Academic Project Prototype</footer>
+  <script src="app.js"></script>
+</body>
+</html>

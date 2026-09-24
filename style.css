@@ -1,0 +1,62 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f6f4ff;
+  color: #17142b;
+}
+.topbar {
+  padding: 18px 7%;
+  background: #19152f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.brand { font-size: 1.3rem; font-weight: 800; }
+.topbar span { opacity: .75; font-size: .9rem; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.hero { text-align: center; padding: 55px 10px 28px; }
+.eyebrow { letter-spacing: .14em; font-weight: 800; font-size: .75rem; color: #6d4aff; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4.2rem); margin: 8px 0; }
+.hero p { max-width: 700px; margin: auto; color: #625e72; line-height: 1.6; }
+.card, .result {
+  background: white; border: 1px solid #e7e3f2; border-radius: 22px;
+  padding: 28px; box-shadow: 0 12px 35px rgba(34, 23, 71, .07); margin-bottom: 28px;
+}
+label { display:block; font-weight:700; margin: 10px 0 8px; }
+textarea, select {
+  width: 100%; border: 1px solid #d9d4e8; border-radius: 12px;
+  padding: 13px; font: inherit; background: #fff;
+}
+textarea { min-height: 130px; resize: vertical; }
+.row { display:grid; grid-template-columns: 1fr 180px; gap: 16px; }
+button {
+  border: 0; border-radius: 12px; padding: 14px 20px; margin-top: 18px;
+  background: #6d4aff; color: white; font-weight: 800; cursor:pointer;
+}
+button:disabled { opacity: .6; cursor: wait; }
+.secondary { background:#eeeafa; color:#342a61; margin-top:0; }
+.status { min-height: 20px; color:#6d4aff; }
+.result-header { display:flex; justify-content:space-between; gap:20px; align-items:start; }
+.result h2 { margin: 4px 0; }
+.characters { display:grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
+.character, .panel {
+  border:1px solid #e8e3f2; border-radius:16px; padding:18px; background:#fbfaff;
+}
+.character h4, .panel h4 { margin:0 0 8px; }
+.panel { margin: 12px 0; }
+.panel-number { color:#6d4aff; font-weight:800; }
+.panel p { line-height:1.5; }
+.hidden { display:none; }
+footer { text-align:center; padding:30px; color:#777187; }
+@media (max-width:650px) {
+  .topbar, .result-header { flex-direction:column; align-items:flex-start; }
+  .row { grid-template-columns:1fr; }
+}
+@media print {
+  .topbar, .card, footer, #printBtn { display:none !important; }
+  body { background:white; }
+  .result { box-shadow:none; border:0; }
+}
